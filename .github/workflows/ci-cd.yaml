@@ -137,4 +137,4 @@ jobs:
 
       - name: Smoke test production
         run: |
-          curl -f https://NOM_DE_TON_APP.onrender.com/health || exit 1
+          curl -f https://module-devops-samy-nathan-prod.onrender.com/health || exit 1
