@@ -1,6 +1,6 @@
 # DevOps TP — API Node.js (Express) + Tests Jest + Docker
 
-[![CI](https://github.com/nattther/module-DevOps-Samy-Nathan/actions/workflows/ci.yml/badge.svg)](https://github.com/nattther/module-DevOps-Samy-Nathan/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/DevopsSamy/module-DevOps-Samy-Nathan/actions/workflows/ci-cd.yaml/badge.svg)](https://github.com/DevopsSamy/module-DevOps-Samy-Nathan/actions/workflows/ci-cd.yaml)
 
 > ✅ **Healthcheck**: `/health`  
 > ✅ **CRUD Tasks**: `/api/tasks`  
