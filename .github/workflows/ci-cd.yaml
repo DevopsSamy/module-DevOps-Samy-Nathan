@@ -12,7 +12,6 @@ permissions:
 
 jobs:
 
-jobs:
   # ── JOB 1 : Install ──────────────────────────────────────
   install:
     runs-on: ubuntu-latest
