@@ -133,11 +133,8 @@ jobs:
             -d '{"clearCache": false}'
 
       - name: Wait for deploy
-        run: sleep 60
+        run: sleep 90
 
       - name: Smoke test production
         run: |
-          curl -f https://$(curl -s \
-            "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID_PROD }}" \
-            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-            | grep -o '"url":"[^"]*"' | head -1 | cut -d'"' -f4)/health || exit 1
+          curl -f https://NOM_DE_TON_APP.onrender.com/health || exit 1
