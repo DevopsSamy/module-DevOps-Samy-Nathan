@@ -9,10 +9,22 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.22.1"
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "supertest": "^7.0.0"
-  }
+    "supertest": "^7.2.2"
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nattther/module-DevOps-Samy-Nathan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nattther/module-DevOps-Samy-Nathan/issues"
+  },
+  "homepage": "https://github.com/nattther/module-DevOps-Samy-Nathan#readme"
 }
