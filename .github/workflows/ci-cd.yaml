@@ -77,14 +77,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set lowercase image name
+        id: repo
+        run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> $GITHUB_OUTPUT
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
-            ghcr.io/${{ github.repository }}:latest
+            ${{ steps.repo.outputs.IMAGE }}:${{ github.sha }}
+            ${{ steps.repo.outputs.IMAGE }}:latest
 
   # ── JOB 5 : Deploy Staging (automatique sur develop) ─────
   deploy-staging:
