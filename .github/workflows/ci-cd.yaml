@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main, develop]
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
 
   # ── JOB 1 : Install ──────────────────────────────────────
@@ -110,11 +114,7 @@ jobs:
         run: sleep 60
 
       - name: Smoke test staging
-        run: |
-          curl -f https://$(curl -s \
-            "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID_STAGING }}" \
-            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-            | grep -o '"url":"[^"]*"' | head -1 | cut -d'"' -f4)/health || exit 1
+        run: curl -f https://module-devops-samy-nathan-staging.onrender.com/health || exit 1
 
   # ── JOB 6 : Deploy Production (manuel sur main) ──────────
   deploy-prod:
@@ -136,5 +136,4 @@ jobs:
         run: sleep 90
 
       - name: Smoke test production
-        run: |
-          curl -f https://module-devops-samy-nathan-prod.onrender.com/health || exit 1
+        run: curl -f https://module-devops-samy-nathan-prod.onrender.com/health || exit 1
